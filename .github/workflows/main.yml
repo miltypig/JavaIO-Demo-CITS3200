@@ -17,4 +17,4 @@ jobs:
        known_hosts: ${{ secrets.KNOW_HOST }}
        
    - name: Deploy with rsync
-     run: rsync -avz / testing@194.195.253.84:/home/testing/AgentServer
+     run: rsync -avz testing@194.195.253.84:/home/testing/AgentServer
