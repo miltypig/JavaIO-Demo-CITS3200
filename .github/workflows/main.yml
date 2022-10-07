@@ -23,5 +23,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /home/testing/AgentServer/JavaIO-Demo-CITS3200
+            cd /home/testing/AgentServer
+            rm -rf JavaIO-Demo-CITS3200
+            gh repo clone miltypig/JavaIO-Demo-CITS3200
+            cd JavaIO-Demo-CITS3200
+            git init
             git fetch origin 
