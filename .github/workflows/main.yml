@@ -16,5 +16,15 @@ jobs:
        key: ${{ secrets.SSH_PRIVATE_KEY }}
        known_hosts: ${{ secrets.KNOW_HOST }}
        
-   - name: Deploy with rsync
-     run: rsync -avz testing@194.195.253.84:/home/testing/AgentServer
+   - name: deploy code
+     uses: appleboy/ssh-action@master
+     with:
+          host: 194.195.253.84
+          username: testing
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/testing/AgentServer/JavaIO-Demo-CITS3200
+            git fetch origin 
+            git reset --hard FETCH_HEAD
+            git clean -d -f --exclude secrets
