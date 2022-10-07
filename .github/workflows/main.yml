@@ -12,7 +12,7 @@ jobs:
      uses: shimataro/ssh-key-action@v2
      with:
        key: ${{ secrets.SSH_PRIVATE_KEY }}
-       known_hosts: ${{ secrets.KNOWN_HOST }}
+       known_hosts: ${{ secrets.KNOW_HOST }}
        
    - name: Deploy with rsync
      run: rsync -avz ./dist/ testing@$194.195.253.84:/home/testing/AgentServer
