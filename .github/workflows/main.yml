@@ -9,7 +9,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Adding Known Hosts
-     run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ${{ secret.KNOWN.HOST }}
+     run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ${{ secrets.KNOWN.HOST }}
      
    - name: Install SSH key
      uses: shimataro/ssh-key-action@v2
